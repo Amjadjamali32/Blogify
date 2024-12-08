@@ -4,14 +4,26 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className="bg-blue-600 text-white p-3 shadow-lg fixed w-full z-10">
+        <header className="bg-blue-600 text-white p-4 shadow-lg fixed w-full z-10">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
-                <div className="text-xl font-semibold flex items-center">
-                    <img src={icon} alt="logo" className='w-1/6 sm:w-1/12 md:w-1/10 lg:w-1/12 ms-4'/>
-                    <Link to="/" className="hover:text-gray-200 font-bold mx-2 mt-2 sm:mt-0">Blogify</Link>
+                {/* Logo and Brand */}
+                <div className="flex items-center">
+                    <img
+                        src={icon}
+                        alt="logo"
+                        className="w-10 h-10 sm:w-12 sm:h-12 mr-3"
+                    />
+                    <Link
+                        to="/"
+                        className="text-xl sm:text-2xl font-bold hover:text-gray-200"
+                    >
+                        Blogify
+                    </Link>
                 </div>
+
+                {/* Desktop Navigation */}
                 <nav className="hidden md:flex">
-                    <ul className="flex space-x-10 me-5">
+                    <ul className="flex space-x-8">
                         <li>
                             <Link to="/" className="hover:text-gray-200">Home</Link>
                         </li>
@@ -26,25 +38,37 @@ const Header = () => {
                         </li>
                     </ul>
                 </nav>
+
+                {/* Mobile Menu Toggle */}
                 <div className="md:hidden flex items-center">
-                    <button className="text-white" onClick={() => document.getElementById("mobile-menu").classList.toggle("hidden")}>
-                        <i className="fas fa-bars"></i> 
+                    <button
+                        className="text-white text-2xl focus:outline-none"
+                        onClick={() =>
+                            document.getElementById("mobile-menu").classList.toggle("hidden")
+                        }
+                    >
+                        <i className="fas fa-bars"></i>
                     </button>
                 </div>
             </div>
-            <div id="mobile-menu" className="md:hidden hidden bg-blue-700 text-white p-4">
-                <ul>
+
+            {/* Mobile Navigation */}
+            <div
+                id="mobile-menu"
+                className="md:hidden hidden bg-blue-700 text-white mt-2 p-4 rounded-lg shadow-lg"
+            >
+                <ul className="space-y-4">
                     <li>
-                        <Link to="/" className="block py-2 hover:text-gray-200">Home</Link>
+                        <Link to="/" className="block hover:text-gray-200">Home</Link>
                     </li>
                     <li>
-                        <Link to="/about" className="block py-2 hover:text-gray-200">About</Link>
+                        <Link to="/about" className="block hover:text-gray-200">About</Link>
                     </li>
                     <li>
-                        <Link to="/contact" className="block py-2 hover:text-gray-200">Contact</Link>
+                        <Link to="/blog" className="block hover:text-gray-200">Blogs</Link>
                     </li>
                     <li>
-                        <Link to="/blog" className="block py-2 hover:text-gray-200">Blogs</Link>
+                        <Link to="/contact" className="block hover:text-gray-200">Contact</Link>
                     </li>
                 </ul>
             </div>
