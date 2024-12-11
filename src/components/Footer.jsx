@@ -50,7 +50,7 @@ const Footer = () => {
                 </div>
                 <div className="mt-8 border-t border-gray-700 pt-6 text-center">
                     <p className="text-gray-400 text-sm">
-                        &copy; {new Date().getFullYear()} BlogApp. All rights reserved.
+                        &copy; {new Date().getFullYear()} Blogify. All rights reserved.
                     </p>
                 </div>
             </div>

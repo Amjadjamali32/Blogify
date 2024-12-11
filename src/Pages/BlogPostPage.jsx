@@ -11,7 +11,7 @@ const BlogPostPage = () => {
     }
 
     return (
-        <div className='pt-16'>
+        <div className='pt-20'>
             <div className="blog-post-page container mx-auto p-4">
                 <h1 className="text-3xl font-extrabold mb-4">{blog.title}</h1>
                 <img
